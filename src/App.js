@@ -17,7 +17,13 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid'
+import Grid from '@material-ui/core/Grid';
+
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
 
 
 const useStyles = makeStyles({
@@ -78,6 +84,20 @@ function App() {
       <Container maxWidth="xs">
         <div className="App">
         <header className="App-header">
+          <AppBar>
+            <Toolbar>
+              <IconButton>
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6">
+                MUI Theming
+              </Typography>
+              <Button>
+                Login
+              </Button>
+            </Toolbar>
+          </AppBar>
+
 
           <Typography variant='h2'component='div'>
             Welcome to MUI
