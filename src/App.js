@@ -11,6 +11,13 @@ import TextField from '@material-ui/core/TextField';
 
 import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { orange, green } from '@material-ui/core/colors';
+import '@fontsource/roboto';
+
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid'
 
 
 const useStyles = makeStyles({
@@ -25,6 +32,12 @@ const useStyles = makeStyles({
 })
 
 const theme = createMuiTheme({
+  typography: {
+    h2: {
+      fontSize: 36,
+      marginBottom: 15,
+    }
+  },
   palette: {
     primary: {
       main: green[400],
@@ -62,35 +75,59 @@ function CheckboxExample() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-      <header className="App-header">
-      
-      <ButtonStyled />
+      <Container maxWidth="xs">
+        <div className="App">
+        <header className="App-header">
 
-      <TextField 
-        variant="outlined"
-        color='secondary'
-        type="email"
-        label="Email"
-        placeholder="test@testing.com"
-      />
-      <CheckboxExample />
-
-      <ButtonGroup variant="contained" color="primary">
-      <Button 
-      startIcon={<SaveIcon />}>
-        Save
-      </Button>
-
-      <Button 
-      startIcon={<DeleteIcon />}>
-        Discard
-      </Button>
-      </ButtonGroup>
-        <img src={logo} className="App-logo" alt="logo" />
+          <Typography variant='h2'component='div'>
+            Welcome to MUI
+          </Typography>
+          <Typography variant='subtitle1'>
+            Learn how to use Material Ui
+          </Typography>
         
-      </header>
-    </div>
+        
+        <ButtonStyled />
+
+        <Grid container spacing={2} justify="center">
+          <Grid item xs={3}sm={6}>
+            <Paper style={{height:75, width:'100%', }} />
+          </Grid>
+
+          <Grid item xs={3} sm={6}>
+            <Paper style={{height:75, width:'100%', }} />
+          </Grid>
+
+          <Grid item xs={3} sm={6}>
+            <Paper style={{height:75, width:'100%', }} />
+          </Grid>
+        </Grid>
+
+        <TextField 
+          variant="outlined"
+          color='secondary'
+          type="email"
+          label="Email"
+          placeholder="test@testing.com"
+        />
+        <CheckboxExample />
+
+        <ButtonGroup variant="contained" color="primary">
+        <Button 
+        startIcon={<SaveIcon />}>
+          Save
+        </Button>
+
+        <Button 
+        startIcon={<DeleteIcon />}>
+          Discard
+        </Button>
+        </ButtonGroup>
+          <img src={logo} className="App-logo" alt="logo" />
+          
+        </header>
+      </div>
+      </Container>
     </ThemeProvider>
   );
 }
